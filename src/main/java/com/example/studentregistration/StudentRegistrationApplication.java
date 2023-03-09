@@ -16,11 +16,6 @@ public class StudentRegistrationApplication {
 		System.out.println("Welcome to my app");
 		SpringApplication.run(StudentRegistrationApplication.class, args);
 	}
-	
-	
 
-	
-
-	
 
 }
