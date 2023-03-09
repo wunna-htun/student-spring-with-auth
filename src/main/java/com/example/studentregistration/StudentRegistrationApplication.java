@@ -4,13 +4,12 @@ package com.example.studentregistration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 
+//@SpringBootApplication
 
-
-@SpringBootApplication
-
-
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class StudentRegistrationApplication {
 
 	public static void main(String[] args) {
@@ -21,8 +20,7 @@ public class StudentRegistrationApplication {
 	
 
 	
-	
-//	https://www.youtube.com/watch?v=9SGDpanrc8U&t=2589s
+
 	
 
 }
