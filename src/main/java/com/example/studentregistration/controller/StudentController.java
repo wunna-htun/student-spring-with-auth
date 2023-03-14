@@ -3,7 +3,7 @@ package com.example.studentregistration.controller;
 
 import com.example.studentregistration.dto.StudentDTO;
 import com.example.studentregistration.model.Student;
-import com.example.studentregistration.security.JwtTokenUtil;
+import com.example.studentregistration.jwt.JwtTokenUtil;
 import com.example.studentregistration.service.StudentService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +19,17 @@ import org.springframework.web.bind.annotation.*;
 public class StudentController {
 
     private final StudentService studentService;
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
 
-    @Value("${jwt.secret}")
-    private String jwtSecret;
 
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
 
-    @PostMapping
-    public ResponseEntity<Student> save(@RequestBody StudentDTO studentDTO) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(studentService.save(studentDTO));
-    }
+//    @PostMapping
+//    public ResponseEntity<Student> save(@RequestBody StudentDTO studentDTO) {
+//        return ResponseEntity.status(HttpStatus.CREATED).body(studentService.save(studentDTO));
+//    }
 
 
 

@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface StudentService {
 
-    Student save(StudentDTO studentDTO);
+    Student save(Student studentDTO);
 
     Student update(Long id, StudentDTO studentDTO);
 
@@ -17,6 +17,9 @@ public interface StudentService {
     Student getById(Long id);
 
     Page<Student> getAll(Pageable pageable);
+
+//    Optional<Student> findByEmail(String email);
+
 
 }
 

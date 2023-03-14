@@ -1,3 +1,1 @@
-INSERT INTO student (id ,age, dob, email, name) VALUES
-                                                      (1,20, '2020-04-02', 'cutomer@mail.com','customer'),
-                                                      (2,23, '2020-03-02', 'user@mail.com','user');
+INSERT INTO student (id ,username, email, phone,password) VALUES (1,'nam@codejava.net', 'nam@codejava.net', '099999','$2a$10$EXJ30VLmStKRvY7oGZl0yubCtwal5PwIVJxxhdHnP70oMZdqfWB2e'),

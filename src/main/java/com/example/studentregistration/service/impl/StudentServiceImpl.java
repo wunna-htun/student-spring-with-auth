@@ -22,19 +22,30 @@ public class StudentServiceImpl implements StudentService {
         this.studentRepository = studentRepository;
     }
 
+//    @Override
+//    public Student save(StudentDTO studentDTO) {
+//        Student student = new Student();
+//        student.setUsername(studentDTO.getUsername());
+//        student.setEmail(studentDTO.getEmail());
+//        student.setPhone(studentDTO.getPhone());
+//        return studentRepository.save(student);
+//    }
+
     @Override
-    public Student save(StudentDTO studentDTO) {
+    public Student save(Student studentDTO) {
         Student student = new Student();
-        student.setName(studentDTO.getName());
+        student.setUsername(studentDTO.getUsername());
         student.setEmail(studentDTO.getEmail());
         student.setPhone(studentDTO.getPhone());
+        student.setPassword(studentDTO.getPassword());
         return studentRepository.save(student);
+
     }
 
     @Override
     public Student update(Long id, StudentDTO studentDTO) {
         Student student = getById(id);
-        student.setName(studentDTO.getName());
+        student.setUsername(studentDTO.getUsername());
         student.setEmail(studentDTO.getEmail());
         student.setPhone(studentDTO.getPhone());
         return studentRepository.save(student);
