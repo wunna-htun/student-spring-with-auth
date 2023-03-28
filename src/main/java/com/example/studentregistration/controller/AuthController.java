@@ -6,7 +6,9 @@ import com.example.studentregistration.model.Student;
 
 import com.example.studentregistration.repository.StudentRepository;
 import com.example.studentregistration.service.StudentService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,10 +20,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.swagger.web.SecurityConfiguration;
 
 import javax.validation.Valid;
 
 @RestController
+@Tag(name = "Auth", description = "The Auth API. Contains all the operations login and register.")
+
 public class AuthController {
 	@Autowired AuthenticationManager authManager;
 	@Autowired
@@ -31,7 +36,6 @@ public class AuthController {
 	private StudentService studentService;
 
 	StudentRepository studentRepository;
-
 
 
 

@@ -44,7 +44,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student update(Long id, StudentDTO studentDTO) {
-        Student student = getById(id);
+        Student student =new Student();
+        student.setId(id);;
         student.setUsername(studentDTO.getUsername());
         student.setEmail(studentDTO.getEmail());
         student.setPhone(studentDTO.getPhone());

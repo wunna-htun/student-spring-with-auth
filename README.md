@@ -1,14 +1,11 @@
 # Spring Boot
 
-#Feature 
 
--CRUD
+http://localhost:9090/swagger-ui.html
 
--sql initinzer 
+register student 
+login 
 
----
-### note 
-
-Age caluate  form dob
-
-http://localhost:8080/swagger-ui.html#
+get student pageable with bear token
+update student 
+delete student 

@@ -1,6 +1,7 @@
 package com.example.studentregistration.repository;
 
 
+import com.example.studentregistration.dto.StudentDTO;
 import com.example.studentregistration.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

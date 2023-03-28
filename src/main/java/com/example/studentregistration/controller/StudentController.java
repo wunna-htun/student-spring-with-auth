@@ -6,19 +6,29 @@ import com.example.studentregistration.model.Student;
 import com.example.studentregistration.jwt.JwtTokenUtil;
 import com.example.studentregistration.service.StudentService;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger.web.SecurityConfiguration;
 
 @RestController
+@Tag(name = "Student", description = "The Student API. Contains all the operations that can be performed on a student.")
+
+
 @RequestMapping("/api/students")
 public class StudentController {
 
     private final StudentService studentService;
+
+
+
 
 
 
@@ -54,9 +64,11 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getById(id));
     }
 
+    @SecurityRequirement(name = "Bearer Authentication")
+
     @GetMapping
     public ResponseEntity<Page<Student>> getAll(Pageable pageable) {
-        return ResponseEntity.ok(studentService.getAll(pageable));
+        return  ResponseEntity.ok(studentService.getAll(pageable));
     }
 
 
