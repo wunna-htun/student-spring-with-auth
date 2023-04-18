@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 //@SpringBootApplication
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+//@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @EnableScheduling
 public class StudentRegistrationApplication {
 
